@@ -32,7 +32,8 @@ class ProcessorException extends RuntimeException implements ProcessorExceptionI
         string $message = "",
         int $code = 0,
         Throwable|null $previous = null
-    ): static {
+    ): static
+    {
         return (new static($message, $code, $previous))
             ->setProcessor($processor);
     }

@@ -165,7 +165,8 @@ class ConstraintsProcessor extends BaseProcessor
         array $criteria,
         string $logical,
         BuiltFiltersMap $built
-    ): BuiltFiltersMap {
+    ): BuiltFiltersMap
+    {
         $parameter = $this->parameter();
 
         foreach ($criteria as $operator => $value) {
@@ -212,7 +213,8 @@ class ConstraintsProcessor extends BaseProcessor
         string $operator,
         mixed $value,
         string $logical = FieldCriteria::AND
-    ): FieldCriteria {
+    ): FieldCriteria
+    {
         // Resolve column name from given property
         $column = $this->resolveColumnName($property);
 
