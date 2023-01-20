@@ -13,7 +13,7 @@ use LogicException;
 /**
  * Belongs To Filter
  *
- * @author Alin Eugen Deac <ade@rspsystems.com>
+ * @author Alin Eugen Deac <aedart@gmail.com>
  * @package Aedart\Filters\Query\Filters\Fields
  */
 class BelongsToFilter extends BaseFieldFilter
@@ -77,8 +77,7 @@ class BelongsToFilter extends BaseFieldFilter
         string $operator = 'eq',
         mixed $value = null,
         string $logical = FieldCriteria::AND
-    ): static
-    {
+    ): static {
         return new static($field, $operator, $value, $logical);
     }
 

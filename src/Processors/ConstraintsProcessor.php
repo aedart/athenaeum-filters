@@ -22,7 +22,7 @@ use LogicException;
  * Be default, this processor expects that constraint filters have the following
  * format: "[name-of-parameter][property][operator]=value", e.g. `filter[age][gt]=24`
  *
- * @author Alin Eugen Deac <ade@rspsystems.com>
+ * @author Alin Eugen Deac <aedart@gmail.com>
  * @package Aedart\Filters\Processors
  */
 class ConstraintsProcessor extends BaseProcessor
@@ -165,8 +165,7 @@ class ConstraintsProcessor extends BaseProcessor
         array $criteria,
         string $logical,
         BuiltFiltersMap $built
-    ): BuiltFiltersMap
-    {
+    ): BuiltFiltersMap {
         $parameter = $this->parameter();
 
         foreach ($criteria as $operator => $value) {
@@ -213,8 +212,7 @@ class ConstraintsProcessor extends BaseProcessor
         string $operator,
         mixed $value,
         string $logical = FieldCriteria::AND
-    ): FieldCriteria
-    {
+    ): FieldCriteria {
         // Resolve column name from given property
         $column = $this->resolveColumnName($property);
 

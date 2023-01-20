@@ -15,7 +15,7 @@ use LogicException;
  *
  * Builds a search query filter, for the requested search term.
  *
- * @author Alin Eugen Deac <ade@rspsystems.com>
+ * @author Alin Eugen Deac <aedart@gmail.com>
  * @package Aedart\Filters\Processors
  */
 class SearchProcessor extends BaseProcessor
@@ -35,15 +35,6 @@ class SearchProcessor extends BaseProcessor
      * @var int
      */
     protected int $maxSearchTermLength = 100;
-
-    /**
-     * @deprecated Since v6.7 - Will be removed in next major version
-     *
-     * The language to use
-     *
-     * @var string
-     */
-    protected string $language = 'en';
 
     /**
      * @inheritDoc
@@ -102,25 +93,6 @@ class SearchProcessor extends BaseProcessor
         return $this;
     }
 
-    /**
-     * @deprecated Since v6.7 - Will be removed in next major version
-     *
-     * Set the language to be used
-     *
-     * Language is typically used for determining the "stop words"
-     * to be removed, before a query is applied.
-     *
-     * @param string $language [optional]
-     *
-     * @return self
-     */
-    public function language(string $language = 'en'): static
-    {
-        $this->language = $language;
-
-        return $this;
-    }
-
     /*****************************************************************
      * Internals
      ****************************************************************/
@@ -134,7 +106,7 @@ class SearchProcessor extends BaseProcessor
      */
     protected function makeFilter(string $search): Criteria
     {
-        return new SearchFilter($search, $this->columns, $this->language);
+        return new SearchFilter($search, $this->columns);
     }
 
     /**

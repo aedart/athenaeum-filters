@@ -16,7 +16,7 @@ use Illuminate\Support\Carbon;
  *
  * Abstraction offers common filter functionality
  *
- * @author Alin Eugen Deac <ade@rspsystems.com>
+ * @author Alin Eugen Deac <aedart@gmail.com>
  * @package Aedart\Filters\Query\Filters\Fields
  */
 abstract class BaseFieldFilter extends FieldFilter
@@ -312,8 +312,7 @@ abstract class BaseFieldFilter extends FieldFilter
         string $low = '>=',
         string $high = '<=',
         int $offset = 1
-    ): Builder|EloquentBuilder
-    {
+    ): Builder|EloquentBuilder {
         // The general database datetime format to use.
         $format = $this->datetimeFormat;
 
